@@ -2,6 +2,30 @@
 (function () {
   "use strict";
 
+  /* ------------------------------------------- instant page prefetcher */
+  var prefetched = {};
+  function prefetchUrl(url) {
+    if (!url || prefetched[url]) return;
+    if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("mailto:") || url.startsWith("tel:") || url.startsWith("javascript:") || url.startsWith("#")) return;
+    var cleanUrl = url.split("#")[0];
+    if (!cleanUrl || prefetched[cleanUrl]) return;
+    prefetched[cleanUrl] = true;
+    var link = document.createElement("link");
+    link.rel = "prefetch";
+    link.href = cleanUrl;
+    document.head.appendChild(link);
+  }
+
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest("a");
+    if (a && a.href) prefetchUrl(a.getAttribute("href"));
+  }, { passive: true });
+
+  document.addEventListener("touchstart", function (e) {
+    var a = e.target.closest("a");
+    if (a && a.href) prefetchUrl(a.getAttribute("href"));
+  }, { passive: true });
+
   /* ------------------------------------------------ sticky header state */
   var headerBar = document.querySelector(".header-bar");
   if (headerBar) {
@@ -501,6 +525,25 @@
         "هواتف الإدارة والمبيعات": "Management & Sales Phones",
         "البريد الإلكتروني الرسمي": "Official Email",
         "موقع المصنع والإدارة": "Factory & Management Location",
+        "تصنيفات المنتجات والخدمات": "Product & Service Categories",
+        "اختر التصنيف المطلوب للانتقال المباشر": "Select a Category for Direct Access",
+        "اضغط على أي تصنيف لاستعراض التفاصيل والمواصفات الفنية المعتمدة بمصنعنا": "Click any category to explore specifications & details.",
+        "القطاعات والنوافذ": "Profiles & Windows",
+        "نوافذ وأبواب ألمنيوم معزولة حراريًا وصوتيًا بأحدث النظم العالمية": "Thermally & acoustically insulated aluminum windows & doors.",
+        "معزول ومقاوم للماء": "Insulated & Water-Resistant",
+        "أبواب WPC الداخلية": "WPC Interior Doors",
+        "أبواب WPC خشبية بلاستيكية معالجة ضد الماء والرطوبة والحشرات": "WPC wood-plastic composite doors resistant to water & humidity.",
+        "كيرتن وول واسكاي لايت": "Curtain Walls & Skylights",
+        "واجهات زجاجية مزدوجة وسيكوريت عالي الأمان للمباني والأبراج": "Double glazed and tempered glass facades for towers & buildings.",
+        "دربزينات وتكسيات": "Railings & Cladding",
+        "درابزينات وتشكيلات استانلس ستيل مقاومة للصدأ بلمسات مصقولة": "Rust-resistant stainless steel railings & architectural profiles.",
+        "أبواب ومظلات": "Doors & Canopies",
+        "أعمال الحديد والمعادن": "Iron & Steel Works",
+        "بوابات ومشغولات حديد ليزر وهناجر بمواصفات إلكتروستاتيك عالي الجودة": "Laser-cut steel gates, structures, and electrostatically coated iron.",
+        "مطابخ مودرن": "Modern Kitchens",
+        "المطابخ والخزائن": "Kitchens & Cabinets",
+        "مطابخ ألمنيوم وخزائن مبتكرة بتصاميم عصرية وضمان شامل": "Innovative aluminum kitchens and modern cabinet solutions.",
+        "عرض التصنيف ←": "View Category →",
         "جميع الحقوق محفوظة": "All Rights Reserved",
         "شركة إبداع الوفاء للصناعات المعدنية": "Ebdaa Al-Wafa Metal Industries",
         "0581892365 — تواصل واتساب": "0581892365 — WhatsApp Contact"
