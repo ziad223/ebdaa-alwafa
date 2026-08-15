@@ -683,9 +683,9 @@ ul {
 .carousel-stage {
   position: relative;
   width: 100%;
-  aspect-ratio: var(--banner-ratio);
-  min-height: 520px;
-  max-height: 700px;
+  aspect-ratio: 2.75 / 1;
+  min-height: 0;
+  max-height: none;
   background-color: var(--brand-deep);
 }
 
@@ -3438,4 +3438,51 @@ body {
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 0.5px;
+}
+
+/* ------------------------------------------------ Responsive Banner Carousel Fix -- */
+@media (max-width: 768px) {
+  .carousel-stage {
+    min-height: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    aspect-ratio: 2.75 / 1 !important;
+    background-color: transparent !important;
+  }
+
+  .carousel-stage img {
+    object-fit: fill !important;
+    object-position: center !important;
+    background-color: transparent !important;
+  }
+
+  .carousel-scrim {
+    opacity: 0.2 !important;
+  }
+
+  .carousel-nav {
+    width: 2rem !important;
+    height: 2rem !important;
+    border-width: 1px !important;
+    opacity: 0.8;
+  }
+
+  .carousel-nav svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .carousel-prev {
+    right: 0.25rem !important;
+  }
+
+  .carousel-next {
+    left: 0.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-stage {
+    aspect-ratio: 2.75 / 1 !important;
+  }
 }
