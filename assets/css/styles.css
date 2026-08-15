@@ -1093,7 +1093,7 @@ ul {
 
 .service-card .media {
   position: relative;
-  height: 14rem;
+  height: 16rem;
   overflow: hidden;
 }
 
@@ -1101,6 +1101,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1771,14 +1772,15 @@ html[dir="ltr"] .arch-card-number {
 }
 
 .service-row .media img {
-  height: 20rem;
+  height: 22rem;
   width: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-row:hover .media img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .service-row h2 {
@@ -2072,7 +2074,7 @@ html[dir="ltr"] .arch-card-number {
 .category-img-wrap {
   position: relative;
   width: 100%;
-  height: 12.5rem;
+  height: 15rem;
   overflow: hidden;
 }
 
@@ -2080,6 +2082,7 @@ html[dir="ltr"] .arch-card-number {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2840,6 +2843,7 @@ html[dir="ltr"] .form-card select {
 
   .service-row .media img {
     height: 20rem;
+    object-fit: cover;
   }
 
   .check-list {
@@ -2978,12 +2982,15 @@ body {
 }
 
 .service-card .media {
-  height: auto;
-  aspect-ratio: 16 / 10;
+  height: 16rem;
+  width: 100%;
 }
 
 .service-card .media img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .service-card .body {
@@ -2992,8 +2999,10 @@ body {
 }
 
 .service-row .media img {
-  height: auto;
-  aspect-ratio: 16 / 10;
+  height: 22rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .map-frame iframe {
