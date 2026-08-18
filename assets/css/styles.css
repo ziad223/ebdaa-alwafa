@@ -437,11 +437,11 @@ ul {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(11, 19, 43, 0.88);
+  background: rgba(248, 250, 252, 0.92);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(16, 185, 129, 0.3);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.25);
 }
 
 .topbar {
@@ -496,11 +496,11 @@ ul {
 }
 
 .header-bar.is-scrolled {
-  background: rgba(11, 19, 43, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   -webkit-backdrop-filter: blur(24px);
   backdrop-filter: blur(24px);
-  border-bottom: 2px solid rgba(16, 185, 129, 0.4);
-  box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.15);
+  border-bottom: 2px solid rgba(16, 185, 129, 0.45);
+  box-shadow: 0 12px 30px -10px rgba(15, 23, 42, 0.22), 0 0 18px rgba(16, 185, 129, 0.12);
 }
 
 .header-inner {
@@ -520,8 +520,8 @@ ul {
 .brand-logo {
   height: 3.25rem;
   width: auto;
+  background: transparent;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 .brand-link:hover .brand-logo {
@@ -537,18 +537,16 @@ ul {
   display: block;
   font-size: 1.125rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #1e3a8a;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .brand-sub {
   display: block;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #10b981;
+  color: #059669;
   letter-spacing: 0.04em;
-  text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
 }
 
 .main-nav {
@@ -562,15 +560,15 @@ ul {
   padding: 0.5rem 1rem;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #e2e8f0;
+  color: #1e293b;
   transition: all 0.3s ease;
   border: 1px solid transparent;
 }
 
 .main-nav a:hover {
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.12);
-  border-color: rgba(16, 185, 129, 0.3);
+  color: #047857;
+  background: rgba(16, 185, 129, 0.14);
+  border-color: rgba(16, 185, 129, 0.35);
 }
 
 .main-nav a[aria-current="page"] {
@@ -592,11 +590,11 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(16, 185, 129, 0.14);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #ffffff;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #1e3a8a;
   padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   font-size: 0.8125rem;
@@ -1781,6 +1779,20 @@ html[dir="ltr"] .arch-card-number {
 
 .service-row:hover .media img {
   transform: scale(1.05);
+}
+
+.service-row .media img.stainless-full-image {
+  height: auto;
+  max-height: none;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #f8fafc;
+}
+
+.service-row:hover .media img.stainless-full-image {
+  transform: none;
 }
 
 .service-row h2 {
